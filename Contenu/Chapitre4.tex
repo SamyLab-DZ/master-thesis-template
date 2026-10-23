@@ -1,0 +1,315 @@
+\chapter{Titre du chapitre 4}
+
+\section{Introduction} 
+
+Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte Texte.
+
+\section{Listes}
+
+\begin{itemize}
+	\item Premier item ;
+	\item Deuxième item ;
+	\item Dernier item.
+\end{itemize}
+
+\begin{itemize}[itemsep=0pt]
+	\renewcommand{\labelitemi}{\scriptsize$\blacksquare$}
+	\item Premier item ;
+	\item Deuxième item ;
+	\item Dernier item.
+\end{itemize}
+
+\begin{enumerate}
+	\item Premier item ;
+	\item Deuxième item ;
+	\item Dernier item.
+\end{enumerate}
+
+\begin{enumerate}[label=\alph*)]
+	\item Premier item ;
+	\item Deuxième item ;
+	\item Dernier item.
+\end{enumerate}
+
+\section{Graphiques}
+La figure \ref{fig:exemple1} est un exemple avec dimensions originales (scale=1).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{image}
+	\caption{Titre de la figure.}
+	\label{fig:exemple1}
+\end{figure}
+
+
+\bigskip
+Figure avec dimensions modifiées d'une façon arbitraire
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=5cm, height=5cm]{image}
+	\caption{Titre de la figure.}
+	\label{fig:exemple2}
+\end{figure}
+
+\bigskip
+Figure avec deux graphiques
+\begin{figure}[H]
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\includegraphics{image}
+	\end{minipage} \hfill
+	\begin{minipage}{.5\linewidth}
+		\centering
+		\includegraphics{image}
+	\end{minipage}
+	\caption{Titre de la figure.}
+	\label{fig:exemple3}
+\end{figure}
+
+\bigskip
+Deux figures l'une à coté de l'autre
+\begin{figure}[H]
+	\begin{minipage}[h]{.5\linewidth}
+		\centering
+		\includegraphics{image}
+		\caption{Titre de la figure.}
+	\end{minipage} \hfill
+	\begin{minipage}[h]{.5\linewidth}
+		\centering
+		\includegraphics{image}
+		\caption{Titre de la figure.}
+		\label{fig:exemple4}
+	\end{minipage}
+\end{figure}
+
+
+\section{Mathématiques}
+{\noindent\bfseries Exemple 1 :} Équations simples
+
+\noindent Soit une fonction $f$ définie par
+\[
+f(x) = 2x-1
+\]
+Soit
+\begin{equation} \label{eq:1}
+	f(x) = 0
+\end{equation}
+La solution de l'équation (\ref{eq:1}) est $x=1/2$.
+
+\bigskip
+{\noindent\bfseries Exemple 2 :} Équations alignées
+\begingroup
+\setlength{\jot}{15pt}
+\begin{align}
+	& y=e^{x+1} \\
+	& y=2\sin{x}+1 \\
+	& y=\sqrt{x+1} \\
+	& y=\left( \frac{1 + x}{2 + x^2} \right)^{2}\\
+	& s=\sum_{i=1}^{n} x_{i}^{2} \\
+	& p=\prod_{i=1}^{n} x_{i}^{2} \\
+	& I=\int_{0}^{\pi} \sin x \, dx \\
+	& l= \lim _{x\rightarrow \infty} \log(x+1)/x
+\end{align}
+\endgroup
+
+
+\bigskip
+{\noindent\bfseries Exemple 3 :} Équation en plusieurs lignes
+\begin{align*}
+	f(x)&=(x+1)(x+2)^2 \\
+	&=(x+1)(x^2+2x+4) \\
+	&=x^3+3x^2+6x+4
+\end{align*}
+
+\bigskip
+{\noindent\bfseries Exemple 4 :} Équations avec parenthèse
+\begin{equation}
+	{\begin{array}{rl}
+			\text{Minimiser} &
+			\left\{
+			\begin{array}{l}
+				f_1(x)=1-\exp\bigl(-\sum_{i=1}^n(x_i-1/\sqrt{n})\bigr), \\
+				f_2(x)=1-\exp\bigl(-\sum_{i=1}^n(x_i+1/\sqrt{n})\bigr),
+			\end{array}
+			\right.
+	\end{array}}
+\end{equation}
+
+\bigskip
+{\noindent\bfseries Exemple 5 :} Équation avec plusieurs cas
+\begin{equation}
+	\begin{array}{l}
+		v_{j,t}^i=
+		\left\{
+		\begin{array}{ll}
+			V_{max,j} & \text{si }v_{j,t}^i>V_{max,j} \\[0.2cm]
+			-V_{max,j} & \text{si }v_{j,t}^i<-V_{max,j} \\[0.2cm]
+			v_{j,t}^i & \text{sinon}
+		\end{array}
+		\right.
+	\end{array}
+\end{equation}
+
+\bigskip
+{\noindent\bfseries Exemple 6 :} Matrices
+
+Soient $\mathbf{A}=[a_{ij}]$ une matrice $n\times p$ et $\mathbf{B}=[b_{ij}]$ une matrice $p\times q$. Le produit de ces deux matrices est la matrice $\mathbf{C}=\mathbf{A}\mathbf{B}$, qui a pour dimension $n\times q$ et s'écrit:
+
+\begin{displaymath}
+	\mathbf{C}=[c_{ij}] \ \text{avec} \ c_{ij}=\sum_{k=1}^{p}a_{ik}b_{kj}, \ \text{pour}\ 1\leq i\leq n \ \text{et} \ 1\leq j\leq q
+\end{displaymath}
+
+\bigskip
+\noindent Soient \\
+\begin{displaymath}
+	\mathbf{A}=
+	\begin{pmatrix}
+		-2 & 1 \\
+		0 & 1 \\
+		-1 & 2
+	\end{pmatrix} \quad \text{et} \quad
+	\mathbf{B}=
+	\begin{pmatrix}
+		6 & 0 & 2\\
+		3 & -2 & 2
+	\end{pmatrix}
+\end{displaymath}\\
+On a donc
+\begin{displaymath}
+	\mathbf{C}=
+	\begin{pmatrix}
+		-2 & 1 \\
+		0 & 1 \\
+		-1 & 2
+	\end{pmatrix} \cdot
+	\begin{pmatrix}
+		6 & 0 & 2\\
+		3 & -2 & 2
+	\end{pmatrix}=
+	\begin{pmatrix}
+		-9 & -2 & -2 \\
+		3 & -2 & 2 \\
+		0 & -4 & 2
+	\end{pmatrix}
+\end{displaymath}
+
+\section{Tableaux}
+Utilisez l'outil en ligne : latex-tables.com 
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau simple.}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \hline
+		1.1 & 1.2 & 1.3 \\ \hline
+		2.1 & 2.2 & 2.3 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\setlength{\arrayrulewidth}{0.5mm}
+	\setlength{\tabcolsep}{18pt}
+	\renewcommand{\arraystretch}{1.5}
+	\caption{Exemple d'un tableau avec des espacements ajustés.}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \hline
+		1.1 & 1.2 & 1.3 \\ \hline
+		2.1 & 2.2 & 2.3 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau avec des largeurs personnalisées.}
+	\centering
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|>{\raggedleft\arraybackslash}p{4cm}|}
+		\hline
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \hline
+		1.1 & 1.2 & 1.3 \\ \hline
+		2.1 & 2.2 & 2.3 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau sans les traits verticaux.}
+	\centering
+	\begin{tabular}{lcr}
+		\toprule
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \midrule
+		1.1 & 1.2 & 1.3 \\
+		2.1 & 2.2 & 2.3 \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau avec une colonne commune.}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		Colonne 1 & \multicolumn{2}{c|}{Colonnes 2 et 3} \\ \hline
+		1.1 & 1.2 & 1.3 \\ \hline
+		2.1 & 2.2 & 2.3 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau avec une ligne commune.}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \hline
+		\multirow{2}{*}{12.1} & 1.2 & 1.3 \\ \cline{2-3}
+		& 2.2 & 2.3 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau avec plusieurs cellules communes.}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		Colonne 1 & \multicolumn{2}{c|}{Colonnes 2 et 3} \\ \hline
+		\multirow{2}{*}{12.1} & 1.2 & 1.3 \\ \cline{2-3}
+		& 2.2 & 2.3 \\ \hline
+		3.1 & 3.2 & 3.3 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau avec un trait diagonal.}
+	\centering
+	\begin{tabular}{|l|c|c|}\hline
+		\diagbox[width=10em]{Lignes}{Colonnes} &
+		Colonne 1 & Colonne 2 \\ \hline
+		Ligne 1 & 1.1 & 1.2 \\ \hline
+		Ligne 2 & 2.1 & 2.2 \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{Exemple d'un tableau contenant une image et une liste.}
+	\centering
+	\begin{tabular}{ | c | m{5cm} | m{5cm} | }
+		\hline
+		Colonne 1 & Colonne 2 & Colonne 3 \\ \hline
+		\begin{minipage}{.3\textwidth}
+			\centering
+			\vspace{0.5cm}
+			\includegraphics[scale=0.7]{image}
+			\vspace{0.5cm}
+		\end{minipage}
+		&
+		%\begin{minipage}[t]{5cm}
+		\begin{itemize}[leftmargin=*,itemsep=0pt]
+			\item Premier item
+			\item Deuxième item
+			\item Dernier item
+		\end{itemize}
+		%\end{minipage}
+		& 1.3
+		\\ \hline
+	\end{tabular}
+\end{table}

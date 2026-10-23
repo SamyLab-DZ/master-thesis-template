@@ -1,0 +1,90 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{floyd2007electronics}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=16732390faca06ffccfd059ee1ea69fd}{%
+           family={Floyd},
+           familyi={F\bibinitperiod},
+           given={T.L.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson/Prentice Hall}%
+      }
+      \strng{namehash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{fullhash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{fullhashraw}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{bibnamehash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{authorbibnamehash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{authornamehash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{authorfullhash}{16732390faca06ffccfd059ee1ea69fd}
+      \strng{authorfullhashraw}{16732390faca06ffccfd059ee1ea69fd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Floyd Electronics Fundamentals Series}
+      \field{title}{Electronics Fundamentals: Circuits, Devices, and Applications}
+      \field{year}{2007}
+    \endentry
+    \entry{latex:companion}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0eaa6423ebe02aa6f67f68d54c64eb39}{%
+           family={Michel\bibnamedelima Gossens},
+           familyi={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={David\bibnamedelima Carlisle},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           suffix={Johannes\bibnamedelima Braams},
+           suffixi={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0907be26d21af9e9c3820d51f421fe33}{%
+           family={Rowley},
+           familyi={R\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{fullhash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{fullhashraw}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{bibnamehash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{authorbibnamehash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{authornamehash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{authorfullhash}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \strng{authorfullhashraw}{5ccb9cebae5bec9f48d5bd9980afef64}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The {\LaTeX} Companion}
+      \field{year}{2004}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,29 @@
+% Memoire de Master USTHB/FGE
+% Compilation par defaut : lualatex
+% Moteur de bibliographie par defaut : biber
+% Samy LABANDJI
+% Version : 03/04/2025
+
+%%%%%% N'editez pas ce fichier %%%%%%
+
+\documentclass[12pt]{report}
+\usepackage{Mémoire_Style}
+
+\begin{document}
+	\include{Contenu/Page_de_garde}
+	\include{Contenu/Dedicaces}
+	\include{Contenu/Remerciements}
+	\include{Contenu/Resumes}
+	\MyTableOfContents
+	\MyListOfFigures
+	\MyListOftables
+	\include{Contenu/Acronymes}
+	\include{Contenu/Introduction}
+	\include{Contenu/Chapitre1}
+	\include{Contenu/Chapitre2}
+	\include{Contenu/Chapitre3}
+	\include{Contenu/Chapitre4}
+	\include{Contenu/Conclusion}
+	\MyBibliography
+    \include{Contenu/Annexe}
+\end{document}

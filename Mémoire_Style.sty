@@ -1,0 +1,281 @@
+\ProvidesPackage{Mémoire_Style}[03/04/2025]
+\RequirePackage[a4paper,left=2.5cm,right=2cm,vmargin=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\RequirePackage{setspace}
+\onehalfspacing % Interligne 1.5
+\RequirePackage{graphicx}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{amsmath,amssymb,array}
+\RequirePackage{textcomp} 
+\RequirePackage{colortbl,tabularx,multirow,diagbox,booktabs}
+\RequirePackage{fancyhdr}
+\RequirePackage{tocloft}
+\RequirePackage{titlesec}
+\RequirePackage{enumitem}
+\RequirePackage[justification=centering]{caption}
+\RequirePackage{titletoc}
+\RequirePackage{float}
+\usepackage[backend=biber,sorting=none]{biblatex} % Pour LuaLaTeX et BibLaTeX
+\addbibresource{bibliographie.bib} % Lien avec le fichier .bib
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% Langues
+\setmainlanguage{french}  % Set French as the default language
+\setotherlanguage[numerals=maghrib]{arabic} % Enable Arabic as a secondary language
+\newfontfamily\arabicfont[Script=Arabic]{Simplified Arabic} % Choose an Arabic font
+
+%% Répertoire des images
+\graphicspath{{images/}}
+
+% Texte
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{6pt}
+
+% Environnement abbreviations
+\newcommand{\abbrlabel}[1]{\makebox[2cm][l]{\textbf{#1}}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}}}{\end{list}}
+
+
+% Définir le style de la page : fancy
+\fancyhf{} % Effacer tous les champs d'en-tête et de pied de page
+\pagestyle{fancy}
+\fancyhead[R]{\leftmark} % Utiliser \leftmark pour l'en-tête gauche
+\fancyfoot[C]{\thepage} % Numérotation des pages en bas à droite
+
+% Pour que \leftmark affiche le numéro de chapitre et son titre
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ : #1}{}}
+
+
+% Définir la commande pour les chapitres sans numérotation
+\newcommand{\nonumchapter}[1]{
+  \chapter*{#1} % Titre du chapitre sans numérotation
+  \addcontentsline{toc}{chapter}{\textbf{#1}} % Ajout du titre au sommaire
+  \markboth{#1}{#1} % Marquage pour les en-têtes
+}
+
+\hypersetup{
+	pdfborder={0 0 0}  % Désactive les bordures autour des liens
+}
+
+
+% Personnalisation des titres des sections
+\addto\captionsfrench{%
+	\renewcommand{\contentsname}{\hfill {\Large TABLE DES MATIÈRES}\hspace*{\fill}}
+	\renewcommand{\listfigurename}{\hfill {\Large LISTE DES FIGURES}\hspace*{\fill}}
+	\renewcommand{\listtablename}{\hfill {\Large LISTE DES TABLEAUX}\hspace*{\fill}}
+}
+
+%environment dedication
+\newenvironment{dedication}{
+	\begin{center}
+		\bfseries\Large\textit{Dédicaces}
+	\end{center}
+	\vspace{18pt}
+	\vspace*{\fill} % Espace pour centrer verticalement
+	\begin{quotation}
+		\begin{center}
+			\begin{em}}
+			{\par\end{em}
+		\end{center}
+	\end{quotation}
+	\vspace*{\fill} % Espace pour équilibrer en bas de la page
+	\newpage
+}
+
+% Remerciements
+\newcommand{\Remerciements}{
+	\begin{center}
+		\bfseries\Large{REMERCIEMENTS}
+	\end{center}
+	\vspace{8pt}
+}
+
+
+% Table des matières
+\newcommand{\MyTableOfContents}{%
+	\clearpage
+	\pagestyle{plain} % Style de page simple
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Table des matières}}
+	\pagenumbering{roman} % Numérotation en chiffres romains
+	\tableofcontents
+}
+
+% Personnalisation des titres des chapitres dans la table des matières
+\titlecontents{chapter}[0cm]
+{\hangindent6.4em\addvspace{5pt}\filright}%
+{\bfseries Chapitre~\thecontentslabel~:~}%
+{\hspace{0cm}}%
+{\hfill\contentspage}[\addvspace{5pt}]
+
+% Espacements avant les titres des listes
+\cftbeforetoctitleskip=-7pt
+\cftbeforelottitleskip=-10pt
+\cftbeforeloftitleskip=-10pt
+
+% Liste des figures
+\newcommand{\MyListOfFigures}{%
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Liste des figures}}
+	\listoffigures
+}
+\setlength{\cftfigindent}{0pt}
+
+% Liste des tableaux
+\newcommand{\MyListOftables}{%
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Liste des tableaux}}
+	\listoftables
+}
+\setlength{\cfttabindent}{0pt}
+
+% Ajustement des largeurs de numérotation des tableaux et figures
+\newlength\mylength
+\settowidth\mylength{\cfttabpresnum\cfttabaftersnum\quad}
+\renewcommand\cfttabnumwidth{1.2cm}
+\settowidth\mylength{\cftfigpresnum\cftfigaftersnum\quad}
+\renewcommand\cftfignumwidth{1.2cm}
+
+%Glossaire / Nomenclature
+\newcommand{\MyGlossary}{%
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Nomenclature}}
+	\hfill {\bfseries\LARGE{NOMENCLATURE}}\hspace*{\fill}
+}
+
+% Styles des titres
+\renewcommand \thechapter{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Titre du chapitre
+\titleformat{\chapter}[display]
+{\vspace*{\fill}\normalfont\Large\filcenter\bfseries}
+{\MakeUppercase{\chaptername}~\thechapter}
+{20pt}
+{\titlerule[1pt]\vspace{1cm}\LARGE\onehalfspacing\MakeUppercase}
+[\vspace{1cm}{\titlerule[1pt]}\thispagestyle{empty}\vspace*{\fill}\newpage\pagestyle{fancy}]
+\titlespacing*{\chapter}{0pt}{-30pt}{0pt}
+\setcounter{secnumdepth}{3}
+
+% Sections en 12 points et gras
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12}{14}} 
+  {\thesection}{1em}{}
+  
+% Sous-sections en 12 points et gras
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{14}} 
+  {\thesubsection}{1em}{}
+  
+
+% Figures et tableaux
+\addto\captionsfrench{\def\figurename{Figure}}
+\addto\captionsfrench{\def\tablename{Tableau}}
+\DeclareCaptionLabelSeparator{colon}{ : }
+\captionsetup[table]{belowskip=10pt}
+\captionsetup[figure]{belowskip=-5pt}
+\renewcommand{\thefigure}{\Roman{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\Roman{chapter}.\arabic{table}}
+
+
+% Introduction Generale
+\newcommand{\IntroductionGenerale}{
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Introduction générale}}
+	\pagenumbering{arabic}
+	\pagestyle{empty}
+	\vspace*{\fill}
+	\noindent\rule{\textwidth}{1pt}
+	\begin{center}
+		\bfseries\LARGE{INTRODUCTION GENERALE}
+	\end{center}
+	\rule{\textwidth}{1pt}
+	\vspace*{\fill}
+	\newpage
+	\markboth{Introduction générale}{}
+	\pagestyle{fancy}
+}
+
+% Conclusion Generale
+\newcommand{\ConclusionGenerale}{
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Conclusion générale}}
+	\pagestyle{empty}
+	\vspace*{\fill}
+	\noindent\rule{\textwidth}{1pt}
+	\begin{center}
+		\bfseries\LARGE{CONCLUSION GENERALE}
+	\end{center}
+	\rule{\textwidth}{1pt}
+	\vspace*{\fill}
+	\newpage
+	\markboth{Conclusion Générale}{}
+	\pagestyle{fancy}
+}
+
+% Bibliography
+\newcommand{\MyBibliography}{%
+	\clearpage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{\textbf{Bibliographie}} % Ajout au TOC
+	\pagenumbering{Roman}
+	\setcounter{page}{0} % Repartir de B1
+	\printbibliography
+}
+
+% annexes 
+\newcommand{\MyAppendix}{
+	\appendix % Active le mode annexes
+	\renewcommand{\chaptername}{Annexe} % Change "Chapitre" en "Annexe"
+	\renewcommand{\thechapter}{\Alph{chapter}} % Numérote les annexes A, B, C...
+	\renewcommand{\chaptermark}[1]{\markboth{Annexe \thechapter\ : ##1}{}} % Marqueur de chapitre
+	\renewcommand{\thepage}{A\arabic{page}} % Format des pages dans les annexes
+	\setcounter{page}{1} % Repartir la numérotation des pages à partir de 1
+	% Personnalisation des annexes dans la table des matières
+	\titlecontents{chapter}[0cm]
+	{\hangindent6.4em\addvspace{5pt}\filright} % Positionnement à droite
+	{\bfseries Annexe~\thecontentslabel~:~} % Préfixe "Annexe"
+	{\hspace{0cm}} 
+	{\hfill\contentspage}[\addvspace{5pt}]
+}
+
+% Définitions des commandes de la page de garde
+\newcommand{\filiere}[1]{\newcommand{\Flr}{#1}}
+\newcommand{\specialite}[1]{\newcommand{\Spc}{#1}}
+\newcommand{\theme}[1]{\newcommand{\Thm}{#1}}
+\newcommand{\etudiant}[1]{\newcommand{\Nme}{#1}}
+\newcommand{\etudiantd}[1]{\newcommand{\Nmed}{#1}}
+\newcommand{\promoteur}[1]{\newcommand{\Nmp}{#1}}
+\newcommand{\copromoteur}[1]{\newcommand{\Nmcp}{#1}}
+\newcommand{\President}[1]{\newcommand{\pres}{#1}}
+\newcommand{\Examinateur}[1]{\newcommand{\exam}{#1}}
+\newcommand{\datesoutenance}[1]{\newcommand{\Datestn}{#1}}
+\newcommand{\annee}[1]{\newcommand{\Ann}{#1}}
+
+% Définitions des commandes du résumé
+\newcommand{\resumesAr}[1]{\newcommand{\Rar}{#1}}
+\newcommand{\motsAr}[1]{\newcommand{\Mar}{#1}}
+\newcommand{\resumesFr}[1]{\newcommand{\Rfr}{#1}}
+\newcommand{\motsFr}[1]{\newcommand{\Mfr}{#1}}
+\newcommand{\resumesEn}[1]{\newcommand{\Ren}{#1}}
+\newcommand{\motsEn}[1]{\newcommand{\Men}{#1}}
+
+
+
+
+
+
+
